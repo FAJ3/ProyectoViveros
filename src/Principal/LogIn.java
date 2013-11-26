@@ -26,6 +26,10 @@ public class LogIn extends javax.swing.JDialog {
         
         
     }
+
+    LogIn() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
      public String getEmpresa (){// Obtenemos el valor de Empresa
             return this.nomEmpresa;
         }
