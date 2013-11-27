@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+// Properties/Run y seleccionamos la clase que se va a ejecutar primero
 package Principal;
 
 /**
@@ -16,11 +16,12 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     
-   //private final String nomEmpresa2;
+  // private final String nomEmpresa2;
     public Principal() {
         initComponents();
         
-       // this.nomEmpresa2 = ;
+        
+       //this.nomEmpresa2 = LogIn.g;
         
         
     }
@@ -37,10 +38,8 @@ public class Principal extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jInicio = new javax.swing.JPanel();
         botonVentas = new javax.swing.JButton();
-        botonTerreno = new javax.swing.JButton();
-        botonAlmacen = new javax.swing.JButton();
-        txtAlmacen = new javax.swing.JLabel();
-        txtTerreno = new javax.swing.JLabel();
+        botonRecursos = new javax.swing.JButton();
+        txtRecursos = new javax.swing.JLabel();
         txtVentas = new javax.swing.JLabel();
         nomEmpresa = new javax.swing.JLabel();
         botonSalir = new javax.swing.JButton();
@@ -48,9 +47,12 @@ public class Principal extends javax.swing.JFrame {
         txtTareas = new javax.swing.JLabel();
         botonPedido = new javax.swing.JButton();
         botonTareas = new javax.swing.JButton();
+        botonPlantas = new javax.swing.JButton();
+        jPlantas = new javax.swing.JLabel();
         jVentas = new javax.swing.JPanel();
-        jAlmacen = new javax.swing.JPanel();
-        jTerrenos = new javax.swing.JPanel();
+        jPedidos = new javax.swing.JPanel();
+        jRecursos = new javax.swing.JPanel();
+        jTareas = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -65,33 +67,19 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        botonTerreno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/invernadero.jpg"))); // NOI18N
-        botonTerreno.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonRecursos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/invernadero.jpg"))); // NOI18N
+        botonRecursos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonTerrenoMouseClicked(evt);
+                botonRecursosMouseClicked(evt);
             }
         });
-        botonTerreno.addActionListener(new java.awt.event.ActionListener() {
+        botonRecursos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonTerrenoActionPerformed(evt);
+                botonRecursosActionPerformed(evt);
             }
         });
 
-        botonAlmacen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/almacen.jpg"))); // NOI18N
-        botonAlmacen.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonAlmacenMouseClicked(evt);
-            }
-        });
-        botonAlmacen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAlmacenActionPerformed(evt);
-            }
-        });
-
-        txtAlmacen.setText("Almacén");
-
-        txtTerreno.setText("Terrenos");
+        txtRecursos.setText("Gestión de recursos");
 
         txtVentas.setText("Ventas");
 
@@ -105,12 +93,17 @@ public class Principal extends javax.swing.JFrame {
                 botonSalirMouseClicked(evt);
             }
         });
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
 
         txtPedido.setText("pedido");
 
         txtTareas.setText("tareas");
 
-        botonPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/pedidos.jpg"))); // NOI18N
+        botonPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/pedidos3.jpg"))); // NOI18N
 
         botonTareas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/tareas.jpeg"))); // NOI18N
         botonTareas.addActionListener(new java.awt.event.ActionListener() {
@@ -119,81 +112,86 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        botonPlantas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/planta.jpg"))); // NOI18N
+
+        jPlantas.setText("Plantas");
+
         javax.swing.GroupLayout jInicioLayout = new javax.swing.GroupLayout(jInicio);
         jInicio.setLayout(jInicioLayout);
         jInicioLayout.setHorizontalGroup(
             jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInicioLayout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(botonAlmacen)
-                .addGap(99, 99, 99)
+                .addGap(75, 75, 75)
+                .addComponent(botonTareas)
+                .addGap(152, 152, 152)
                 .addComponent(botonSalir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(botonTerreno)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
+                .addComponent(botonRecursos)
                 .addGap(174, 174, 174))
             .addGroup(jInicioLayout.createSequentialGroup()
-                .addGap(207, 207, 207)
-                .addComponent(txtAlmacen)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtTerreno)
-                .addGap(299, 299, 299))
-            .addGroup(jInicioLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(botonPedido)
-                .addGap(85, 85, 85)
-                .addComponent(botonTareas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonVentas)
-                .addContainerGap(278, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInicioLayout.createSequentialGroup()
-                .addGap(137, 137, 137)
-                .addComponent(txtPedido)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtTareas)
-                .addGap(338, 338, 338)
-                .addComponent(txtVentas)
-                .addGap(253, 253, 253))
-            .addGroup(jInicioLayout.createSequentialGroup()
-                .addGap(389, 389, 389)
-                .addComponent(nomEmpresa)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(103, 103, 103)
+                .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInicioLayout.createSequentialGroup()
+                        .addGap(226, 226, 226)
+                        .addComponent(nomEmpresa)
+                        .addContainerGap())
+                    .addGroup(jInicioLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(txtTareas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtRecursos)
+                        .addGap(299, 299, 299))
+                    .addGroup(jInicioLayout.createSequentialGroup()
+                        .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jInicioLayout.createSequentialGroup()
+                                .addComponent(botonPedido)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jInicioLayout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(txtPedido)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPlantas)
+                                .addGap(260, 260, 260)))
+                        .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInicioLayout.createSequentialGroup()
+                                .addComponent(botonVentas)
+                                .addGap(108, 108, 108))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInicioLayout.createSequentialGroup()
+                                .addComponent(txtVentas)
+                                .addGap(220, 220, 220))))))
         );
         jInicioLayout.setVerticalGroup(
             jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInicioLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonAlmacen)
-                    .addComponent(botonTerreno))
-                .addGap(18, 18, 18)
-                .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInicioLayout.createSequentialGroup()
-                        .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtTerreno)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInicioLayout.createSequentialGroup()
-                                .addComponent(txtAlmacen)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)))
-                        .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInicioLayout.createSequentialGroup()
-                                .addGap(47, 47, 47)
-                                .addComponent(botonVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jInicioLayout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(botonPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                    .addComponent(botonTareas))
+                        .addGap(78, 78, 78)
+                        .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonRecursos)
+                            .addComponent(botonTareas))
+                        .addGap(18, 18, 18)
+                        .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtRecursos)
+                            .addComponent(txtTareas)))
+                    .addGroup(jInicioLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(nomEmpresa)
+                        .addGap(116, 116, 116)
+                        .addComponent(botonSalir)))
+                .addGap(47, 47, 47)
+                .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonVentas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonPedido))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtVentas)
-                        .addComponent(txtTareas))
+                        .addComponent(jPlantas)
+                        .addComponent(txtVentas))
                     .addComponent(txtPedido))
-                .addContainerGap(188, Short.MAX_VALUE))
-            .addGroup(jInicioLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(nomEmpresa)
-                .addGap(116, 116, 116)
-                .addComponent(botonSalir)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         botonTareas.getAccessibleContext().setAccessibleName("botonTareas");
@@ -204,7 +202,7 @@ public class Principal extends javax.swing.JFrame {
         jVentas.setLayout(jVentasLayout);
         jVentasLayout.setHorizontalGroup(
             jVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1107, Short.MAX_VALUE)
+            .addGap(0, 1238, Short.MAX_VALUE)
         );
         jVentasLayout.setVerticalGroup(
             jVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,31 +211,44 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Ventas", jVentas);
 
-        javax.swing.GroupLayout jAlmacenLayout = new javax.swing.GroupLayout(jAlmacen);
-        jAlmacen.setLayout(jAlmacenLayout);
-        jAlmacenLayout.setHorizontalGroup(
-            jAlmacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1107, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPedidosLayout = new javax.swing.GroupLayout(jPedidos);
+        jPedidos.setLayout(jPedidosLayout);
+        jPedidosLayout.setHorizontalGroup(
+            jPedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1238, Short.MAX_VALUE)
         );
-        jAlmacenLayout.setVerticalGroup(
-            jAlmacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPedidosLayout.setVerticalGroup(
+            jPedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 755, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Almacén", jAlmacen);
+        jTabbedPane1.addTab("Pedidos", jPedidos);
 
-        javax.swing.GroupLayout jTerrenosLayout = new javax.swing.GroupLayout(jTerrenos);
-        jTerrenos.setLayout(jTerrenosLayout);
-        jTerrenosLayout.setHorizontalGroup(
-            jTerrenosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1107, Short.MAX_VALUE)
+        javax.swing.GroupLayout jRecursosLayout = new javax.swing.GroupLayout(jRecursos);
+        jRecursos.setLayout(jRecursosLayout);
+        jRecursosLayout.setHorizontalGroup(
+            jRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1238, Short.MAX_VALUE)
         );
-        jTerrenosLayout.setVerticalGroup(
-            jTerrenosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jRecursosLayout.setVerticalGroup(
+            jRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 755, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Terrenos", jTerrenos);
+        jTabbedPane1.addTab("Gestión de recursos", jRecursos);
+
+        javax.swing.GroupLayout jTareasLayout = new javax.swing.GroupLayout(jTareas);
+        jTareas.setLayout(jTareasLayout);
+        jTareasLayout.setHorizontalGroup(
+            jTareasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1238, Short.MAX_VALUE)
+        );
+        jTareasLayout.setVerticalGroup(
+            jTareasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 688, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Tareas", jTareas);
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -268,23 +279,14 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonVentasActionPerformed
 
-    private void botonTerrenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTerrenoActionPerformed
+    private void botonRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRecursosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botonTerrenoActionPerformed
+    }//GEN-LAST:event_botonRecursosActionPerformed
 
-    private void botonAlmacenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAlmacenActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAlmacenActionPerformed
-
-    private void botonAlmacenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAlmacenMouseClicked
-                
-       
-    }//GEN-LAST:event_botonAlmacenMouseClicked
-
-    private void botonTerrenoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonTerrenoMouseClicked
+    private void botonRecursosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRecursosMouseClicked
        
         
-    }//GEN-LAST:event_botonTerrenoMouseClicked
+    }//GEN-LAST:event_botonRecursosMouseClicked
 
     private void botonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalirMouseClicked
         
@@ -294,6 +296,10 @@ public class Principal extends javax.swing.JFrame {
     private void botonTareasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTareasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonTareasActionPerformed
+
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -331,26 +337,27 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAlmacen;
     private javax.swing.JButton botonPedido;
+    private javax.swing.JButton botonPlantas;
+    private javax.swing.JButton botonRecursos;
     private javax.swing.JButton botonSalir;
     private javax.swing.JButton botonTareas;
-    private javax.swing.JButton botonTerreno;
     private javax.swing.JButton botonVentas;
-    private javax.swing.JPanel jAlmacen;
     private javax.swing.JPanel jInicio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPedidos;
+    private javax.swing.JLabel jPlantas;
+    private javax.swing.JPanel jRecursos;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JPanel jTerrenos;
+    private javax.swing.JPanel jTareas;
     private javax.swing.JPanel jVentas;
     private javax.swing.JLabel nomEmpresa;
-    private javax.swing.JLabel txtAlmacen;
     private javax.swing.JLabel txtPedido;
+    private javax.swing.JLabel txtRecursos;
     private javax.swing.JLabel txtTareas;
-    private javax.swing.JLabel txtTerreno;
     private javax.swing.JLabel txtVentas;
     // End of variables declaration//GEN-END:variables
 }
