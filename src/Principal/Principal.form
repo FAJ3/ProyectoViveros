@@ -216,6 +216,9 @@
                   <Image iconType="3" name="/Principal/Resources/pedidos3.jpg"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonPedidoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botonTareas">
               <Properties>
@@ -237,6 +240,9 @@
                   <Image iconType="3" name="/Principal/Resources/planta.jpg"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonPlantasActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="txtPlantas">
               <Properties>

@@ -102,6 +102,11 @@ public class Principal extends javax.swing.JFrame {
         txtTareas.setText("Tareas");
 
         botonPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/pedidos3.jpg"))); // NOI18N
+        botonPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPedidoActionPerformed(evt);
+            }
+        });
 
         botonTareas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/tareas.jpeg"))); // NOI18N
         botonTareas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -116,6 +121,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         botonPlantas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/planta.jpg"))); // NOI18N
+        botonPlantas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPlantasActionPerformed(evt);
+            }
+        });
 
         txtPlantas.setText("Plantas");
 
@@ -388,12 +398,11 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRecursosActionPerformed
-        // TODO add your handling code here:
+        this.jTabbedPane1.setSelectedIndex(4);//Cambia a la pestaña que le asignamos 
     }//GEN-LAST:event_botonRecursosActionPerformed
 
     private void botonRecursosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRecursosMouseClicked
-       
-        
+              
     }//GEN-LAST:event_botonRecursosMouseClicked
 
     private void botonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalirMouseClicked
@@ -402,8 +411,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalirMouseClicked
 
     private void botonTareasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTareasActionPerformed
-        jTareas.setVisible(rootPaneCheckingEnabled);
-        repaint();
+        this.jTabbedPane1.setSelectedIndex(1);//Cambia a la pestaña que le asignamos
     }//GEN-LAST:event_botonTareasActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
@@ -417,6 +425,14 @@ public class Principal extends javax.swing.JFrame {
     private void botonTareasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonTareasMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_botonTareasMouseClicked
+
+    private void botonPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPedidoActionPerformed
+        this.jTabbedPane1.setSelectedIndex(2);//Cambia a la pestaña que le asignamos 
+    }//GEN-LAST:event_botonPedidoActionPerformed
+
+    private void botonPlantasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPlantasActionPerformed
+        this.jTabbedPane1.setSelectedIndex(3);//Cambia a la pestaña que le asignamos 
+    }//GEN-LAST:event_botonPlantasActionPerformed
 
     /**
      * @param args the command line arguments
