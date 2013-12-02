@@ -19,11 +19,8 @@ public class Principal extends javax.swing.JFrame {
   // private final String nomEmpresa2;
     public Principal() {
         initComponents();
-        
-        
-       //this.nomEmpresa2 = LogIn.g;
-        
-        
+        this.nomEmpresa.setText(LogIn.nomEmpresa);
+       
     }
 
     /**
@@ -107,6 +104,11 @@ public class Principal extends javax.swing.JFrame {
         botonPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/pedidos3.jpg"))); // NOI18N
 
         botonTareas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/tareas.jpeg"))); // NOI18N
+        botonTareas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonTareasMouseClicked(evt);
+            }
+        });
         botonTareas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonTareasActionPerformed(evt);
@@ -183,12 +185,12 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtPlantas)
                     .addComponent(txtPedido))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         botonTareas.getAccessibleContext().setAccessibleName("botonTareas");
 
-        jTabbedPane1.addTab("Inicio", jInicio);
+        jTabbedPane1.addTab("Inicio", new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/iconoInicio.png")), jInicio); // NOI18N
 
         javax.swing.GroupLayout jTareasLayout = new javax.swing.GroupLayout(jTareas);
         jTareas.setLayout(jTareasLayout);
@@ -198,10 +200,10 @@ public class Principal extends javax.swing.JFrame {
         );
         jTareasLayout.setVerticalGroup(
             jTareasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 594, Short.MAX_VALUE)
+            .addGap(0, 588, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Tareas", jTareas);
+        jTabbedPane1.addTab("Tareas", new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/iconoTareas.gif")), jTareas); // NOI18N
 
         jTablePedidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -284,12 +286,12 @@ public class Principal extends javax.swing.JFrame {
         jPedidosLayout.setVerticalGroup(
             jPedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPedidosLayout.createSequentialGroup()
-                .addContainerGap(161, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPPedi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(152, 152, 152))
         );
 
-        jTabbedPane1.addTab("Pedidos", jPedidos);
+        jTabbedPane1.addTab("Pedidos", new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/iconoPedidos2.png")), jPedidos); // NOI18N
 
         botonEliminar.setText("Eliminar");
         botonEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -338,10 +340,10 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPlantasLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addContainerGap(234, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Plantas", jPlantas);
+        jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/iconoPlantas.png")), jPlantas); // NOI18N
 
         javax.swing.GroupLayout jRecursosLayout = new javax.swing.GroupLayout(jRecursos);
         jRecursos.setLayout(jRecursosLayout);
@@ -351,10 +353,10 @@ public class Principal extends javax.swing.JFrame {
         );
         jRecursosLayout.setVerticalGroup(
             jRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 594, Short.MAX_VALUE)
+            .addGap(0, 588, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Gestión de recursos", jRecursos);
+        jTabbedPane1.addTab("Gestión de recursos", new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/iconoRecursos.png")), jRecursos); // NOI18N
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -400,7 +402,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalirMouseClicked
 
     private void botonTareasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTareasActionPerformed
-        // TODO add your handling code here:
+        jTareas.setVisible(rootPaneCheckingEnabled);
+        repaint();
     }//GEN-LAST:event_botonTareasActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
@@ -410,6 +413,10 @@ public class Principal extends javax.swing.JFrame {
     private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonEliminarActionPerformed
+
+    private void botonTareasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonTareasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonTareasMouseClicked
 
     /**
      * @param args the command line arguments

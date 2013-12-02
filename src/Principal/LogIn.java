@@ -6,6 +6,7 @@
 
 package Principal;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,24 +18,14 @@ public class LogIn extends javax.swing.JDialog {
     /**
      * Creates new form LogIn
      */
-    private final String nomEmpresa;//Nos creamos una variable que recogera el valor del campo empresa
+    public static String nomEmpresa;//Nos creamos una variable que recogera el valor del campo empresa
    
     public LogIn(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.nomEmpresa = jTextEmpresa.getText();//Obtenemos el valor del campo Nombre de empresa
-        
-        
+                
     }
-
-    LogIn() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-     public String getEmpresa (){// Obtenemos el valor de Empresa
-            return this.nomEmpresa;
-        }
     
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,6 +44,7 @@ public class LogIn extends javax.swing.JDialog {
         lolEmpresa = new javax.swing.JLabel();
         jTextEmpresa = new javax.swing.JTextField();
         BotonEntrar = new javax.swing.JButton();
+        botonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -83,9 +75,21 @@ public class LogIn extends javax.swing.JDialog {
                 BotonEntrarMouseClicked(evt);
             }
         });
+        BotonEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEntrarActionPerformed(evt);
+            }
+        });
         BotonEntrar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 BotonEntrarKeyPressed(evt);
+            }
+        });
+
+        botonSalir.setText("Salir");
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
             }
         });
 
@@ -95,18 +99,19 @@ public class LogIn extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(124, 124, 124)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotonEntrar)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPass)
+                    .addComponent(lblUsuario)
+                    .addComponent(lolEmpresa))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPass)
-                            .addComponent(lblUsuario)
-                            .addComponent(lolEmpresa))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPass, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextEmpresa, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(BotonEntrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonSalir))
+                    .addComponent(jPass)
+                    .addComponent(jTextEmpresa)
+                    .addComponent(jTextUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -124,9 +129,11 @@ public class LogIn extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lolEmpresa)
                     .addComponent(jTextEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(BotonEntrar)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonEntrar)
+                    .addComponent(botonSalir))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -156,17 +163,42 @@ public class LogIn extends javax.swing.JDialog {
     }//GEN-LAST:event_jPassActionPerformed
 
     private void jTextEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextEmpresaActionPerformed
-        // TODO add your handling code here:
+       // BotonEntrarKeyPressed(null);
     }//GEN-LAST:event_jTextEmpresaActionPerformed
 
     private void BotonEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonEntrarMouseClicked
+       
+    }//GEN-LAST:event_BotonEntrarMouseClicked
+
+    private void BotonEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BotonEntrarKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){//Compara si el codigo de la tecla pulsada equivale al Intro
+            String user="di", pass="123";//Nos creamos las 2 variables para comparar el login
+        
+            String pass2=new String(jPass.getPassword());//Recuperamos el valor del campo de la contraseña
+
+            if (jTextUsuario.getText().equalsIgnoreCase(user) && pass2.equals(pass)){ //Comparamos los valores equalsIgnoreCase sirve para ignorar las mayusculas
+
+                this.nomEmpresa = jTextEmpresa.getText();//Obtenemos el valor del campo Nombre de empresa
+                Principal p = new Principal();
+                dispose();// Cerramos la ventana del login
+                p.setVisible(true);// Mostramos la pantalla principal
+
+            }else{
+                JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrectos","Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }         
+    }//GEN-LAST:event_BotonEntrarKeyPressed
+
+    private void BotonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEntrarActionPerformed
         // TODO add your handling code here:
+         // TODO add your handling code here:
         String user="di", pass="123";//Nos creamos las 2 variables para comparar el login
         
         String pass2=new String(jPass.getPassword());//Recuperamos el valor del campo de la contraseña
         
         if (jTextUsuario.getText().equalsIgnoreCase(user) && pass2.equals(pass)){ //Comparamos los valores equalsIgnoreCase sirve para ignorar las mayusculas
-            
+        
+            this.nomEmpresa = jTextEmpresa.getText();//Obtenemos el valor del campo Nombre de empresa
             Principal p = new Principal();
             dispose();// Cerramos la ventana del login
             p.setVisible(true);// Mostramos la pantalla principal
@@ -174,11 +206,11 @@ public class LogIn extends javax.swing.JDialog {
         }else{
             JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrectos","Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_BotonEntrarMouseClicked
+    }//GEN-LAST:event_BotonEntrarActionPerformed
 
-    private void BotonEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BotonEntrarKeyPressed
-        
-    }//GEN-LAST:event_BotonEntrarKeyPressed
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        dispose();// Salimos de la pantalla de logIn
+    }//GEN-LAST:event_botonSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,6 +256,7 @@ public class LogIn extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonEntrar;
+    private javax.swing.JButton botonSalir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPass;
     private javax.swing.JTextField jTextEmpresa;
