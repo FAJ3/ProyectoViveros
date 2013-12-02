@@ -48,6 +48,7 @@ public class PlantasDatos extends javax.swing.JDialog {
         txtEuro = new javax.swing.JLabel();
         btCancelar = new javax.swing.JButton();
         btAceptar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -91,6 +92,8 @@ public class PlantasDatos extends javax.swing.JDialog {
 
         btAceptar.setText("Aceptar");
 
+        jButton1.setText("Cargar Imagen");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -127,11 +130,17 @@ public class PlantasDatos extends javax.swing.JDialog {
                         .addComponent(btCancelar)
                         .addGap(12, 12, 12)))
                 .addContainerGap(129, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(117, 117, 117))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(12, 12, 12)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNombre))
@@ -237,6 +246,7 @@ public class PlantasDatos extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAceptar;
     private javax.swing.JButton btCancelar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboMaceta;
     private javax.swing.JComboBox jComboRiego;
     private javax.swing.JTextField jEpoca;
