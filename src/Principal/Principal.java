@@ -6,6 +6,9 @@
 // Properties/Run y seleccionamos la clase que se va a ejecutar primero
 package Principal;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Sáfico
@@ -55,10 +58,28 @@ public class Principal extends javax.swing.JFrame {
         jBCancelar = new javax.swing.JButton();
         jBAceptar = new javax.swing.JButton();
         jPlantas = new javax.swing.JPanel();
-        botonEliminar = new javax.swing.JButton();
-        botonAnyadir = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btAnyadir = new javax.swing.JButton();
+        btEliminar = new javax.swing.JButton();
+        txtEuro = new javax.swing.JLabel();
+        jPrecio = new javax.swing.JTextField();
+        jEpoca = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextAreaDescripcion = new javax.swing.JTextArea();
+        jComboRiego = new javax.swing.JComboBox();
+        txtEpoca = new javax.swing.JLabel();
+        txtDescripcion = new javax.swing.JLabel();
+        txtRiego = new javax.swing.JLabel();
+        txtPrecio = new javax.swing.JLabel();
+        txtMaceta = new javax.swing.JLabel();
+        jComboMaceta = new javax.swing.JComboBox();
+        jNombreCientifico = new javax.swing.JTextField();
+        txtNombreCientifico = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JLabel();
+        jNombre = new javax.swing.JTextField();
+        btNuevo = new javax.swing.JButton();
+        btActualizar = new javax.swing.JButton();
         jRecursos = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -145,7 +166,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(txtRecursos)
                         .addGap(191, 191, 191))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInicioLayout.createSequentialGroup()
-                        .addGap(0, 105, Short.MAX_VALUE)
+                        .addGap(0, 172, Short.MAX_VALUE)
                         .addComponent(botonPedido)
                         .addGap(149, 149, 149)
                         .addComponent(botonPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,7 +223,7 @@ public class Principal extends javax.swing.JFrame {
         jTareas.setLayout(jTareasLayout);
         jTareasLayout.setHorizontalGroup(
             jTareasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1109, Short.MAX_VALUE)
+            .addGap(0, 1176, Short.MAX_VALUE)
         );
         jTareasLayout.setVerticalGroup(
             jTareasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,7 +308,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPedidosLayout.createSequentialGroup()
                 .addGap(336, 336, 336)
                 .addComponent(jPPedi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(369, Short.MAX_VALUE))
+                .addContainerGap(436, Short.MAX_VALUE))
         );
         jPedidosLayout.setVerticalGroup(
             jPedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,27 +320,99 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Pedidos", new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/iconoPedidos2.png")), jPedidos); // NOI18N
 
-        botonEliminar.setText("Eliminar");
-        botonEliminar.addActionListener(new java.awt.event.ActionListener() {
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Nombre científico", "Maceta", "Riego", "Epc. plantación", "Descripción", "Precio"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setColumnSelectionAllowed(true);
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(jTable1);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
+            jTable1.getColumnModel().getColumn(5).setResizable(false);
+            jTable1.getColumnModel().getColumn(6).setResizable(false);
+        }
+
+        btAnyadir.setText("Añadir");
+        btAnyadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminarActionPerformed(evt);
+                btAnyadirActionPerformed(evt);
             }
         });
 
-        botonAnyadir.setText("Añadir");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        btEliminar.setText("Eliminar");
+        btEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEliminarActionPerformed(evt);
             }
-        ));
-        jScrollPane2.setViewportView(jTable1);
+        });
+
+        txtEuro.setText("€");
+
+        jPrecio.setText("jTextField4");
+
+        jTextAreaDescripcion.setColumns(20);
+        jTextAreaDescripcion.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaDescripcion);
+
+        jComboRiego.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 riego/semana", "2 riegos/semana", "3 riegos/semana", "4 riegos/semana", "5 riegos/semana", "6 riegos/semana", "7 riegos/semana" }));
+
+        txtEpoca.setText("Época de plantación");
+
+        txtDescripcion.setText("Descripción");
+
+        txtRiego.setText("Riego");
+
+        txtPrecio.setText("Precio");
+
+        txtMaceta.setText("Maceta");
+
+        jComboMaceta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 Litro", "2 Litros", "5 Litros" }));
+        jComboMaceta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboMacetaActionPerformed(evt);
+            }
+        });
+
+        txtNombreCientifico.setText("Nombre cientifíco");
+
+        txtNombre.setText("Nombre");
+
+        btNuevo.setText("Nuevo");
+        btNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNuevoActionPerformed(evt);
+            }
+        });
+
+        btActualizar.setText("Actualizar");
 
         javax.swing.GroupLayout jPlantasLayout = new javax.swing.GroupLayout(jPlantas);
         jPlantas.setLayout(jPlantasLayout);
@@ -327,26 +420,87 @@ public class Principal extends javax.swing.JFrame {
             jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPlantasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148)
-                .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonAnyadir, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonEliminar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
+                .addGap(38, 38, 38)
+                .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPlantasLayout.createSequentialGroup()
+                        .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNombreCientifico)
+                            .addComponent(txtNombre)
+                            .addComponent(txtMaceta)
+                            .addComponent(txtRiego)
+                            .addComponent(txtEpoca, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDescripcion)
+                            .addComponent(txtPrecio))
+                        .addGap(76, 76, 76)
+                        .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPlantasLayout.createSequentialGroup()
+                                .addComponent(jPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtEuro))
+                            .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btEliminar)
+                                .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jEpoca)
+                                    .addComponent(jComboMaceta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboRiego, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jNombreCientifico)
+                                    .addComponent(jNombre)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPlantasLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(btNuevo)
+                        .addGap(18, 18, 18)
+                        .addComponent(btAnyadir, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btActualizar)))
+                .addGap(32, 32, 32))
         );
         jPlantasLayout.setVerticalGroup(
             jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPlantasLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPlantasLayout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(botonAnyadir)
-                        .addGap(97, 97, 97)
-                        .addComponent(botonEliminar))
-                    .addGroup(jPlantasLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(234, Short.MAX_VALUE))
+                        .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombre))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNombreCientifico)
+                            .addComponent(jNombreCientifico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMaceta)
+                            .addComponent(jComboMaceta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtRiego)
+                            .addComponent(jComboRiego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEpoca)
+                            .addComponent(jEpoca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPlantasLayout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(txtDescripcion))
+                            .addGroup(jPlantasLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEuro)
+                            .addComponent(txtPrecio))
+                        .addGap(69, 69, 69)
+                        .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btAnyadir)
+                            .addComponent(btNuevo)
+                            .addComponent(btEliminar)
+                            .addComponent(btActualizar)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/Principal/Resources/iconoPlantas.png")), jPlantas); // NOI18N
@@ -355,7 +509,7 @@ public class Principal extends javax.swing.JFrame {
         jRecursos.setLayout(jRecursosLayout);
         jRecursosLayout.setHorizontalGroup(
             jRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1109, Short.MAX_VALUE)
+            .addGap(0, 1176, Short.MAX_VALUE)
         );
         jRecursosLayout.setVerticalGroup(
             jRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -403,9 +557,9 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonSalirActionPerformed
 
-    private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
+    private void btEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminarActionPerformed
+    }//GEN-LAST:event_btEliminarActionPerformed
 
     private void botonTareasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonTareasMouseClicked
         // TODO add your handling code here:
@@ -419,9 +573,140 @@ public class Principal extends javax.swing.JFrame {
         this.jTabbedPane1.setSelectedIndex(3);//Cambia a la pestaña que le asignamos 
     }//GEN-LAST:event_botonPlantasActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btAnyadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAnyadirActionPerformed
+
+    }//GEN-LAST:event_btAnyadirActionPerformed
+
+    private void jComboMacetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboMacetaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboMacetaActionPerformed
+
+    private void btNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btNuevoActionPerformed
+
+   
+    public void iniciar(){
+        //Método que se carga al inicio del formulario,
+        //Esto lo hacemos llamandolo desde el contructor.
+        //Vaciar campus e inhabilitar botones
+        this.jNombre.setText(null);
+        this.jNombre.setEnabled(false);
+        this.jNombreCientifico.setText(null);
+        this.jNombreCientifico.setEnabled(false);
+        this.jEpoca.setText(null);
+        this.jEpoca.setEnabled(false);
+        this.jTextAreaDescripcion.setText(null);
+        this.jTextAreaDescripcion.setEnabled(false);
+        this.jPrecio.setEnabled(false);
+        this.jPrecio.setEnabled(false);
+        this.btNuevo.setEnabled(true);
+        this.btEliminar.setEnabled(false);
+        this.btAnyadir.setEnabled(false);
+        this.btActualizar.setEnabled(false);
+        this.jTable1.setEnabled(true);
+        int fila = 0;
+        
+    }
+    /*public void tableModel(){
+        //Método que se carga al inicio del formulario,
+        //Esto lo hacemos llamandolo desde el contructor.
+        //Utilizamos el siguiente procedimiento para indicar el tamaño
+         // del cada columna, el índice inicia de 0.
+         
+        this.jTable1.getColumnModel().getColumn(0).setPreferredWidth(5);
+        this.jTable1.getColumnModel().getColumn(1).setPreferredWidth(100);
+        this.jTable1.getColumnModel().getColumn(2).setPreferredWidth(100);
+        this.jTable1.getColumnModel().getColumn(3).setPreferredWidth(100);
+        //Indicamos que la variable model se aplica al jTable1.
+        model = (DefaultTableModel)this.jTable1.getModel();
+        //Indicamos la cantidad de filas que tendrá la tabla al inicio.
+        model.setNumRows(0);        
+    }*/
+    public void cancelar(){
+        //Método que se ejecuta al precionar el botón "Cancelar".
+        iniciar();
+    }
+    public void nuevo(){
+        //Método que se ejecuta al precionar el botón "Nuevo".
+        iniciar();
+       //Activamos campos y bóton.
+        this.jNombre.setEnabled(true);
+        this.jNombreCientifico.setEnabled(true);
+        this.jEpoca.setEnabled(true);        
+        this.jTextAreaDescripcion.setEnabled(true);
+        this.jPrecio.setEnabled(true);
+        this.btAnyadir.setEnabled(true);
+    }
+    public void agregar(){
+        //Comprobamos que los campos no esten vacios.
+        if(nom.getText().isEmpty() || dir.getText().isEmpty() || correo.getText().isEmpty() ){
+           JOptionPane.showMessageDialog(null, "Rellena todos los campos."); 
+        }
+        else{
+            //Agregamos datos a la tabla utilizando Object.
+            //Cada getText() entre comas significa una columna.
+            model.addRow(new Object[]{
+                id.getText(),nom.getText(),dir.getText(),correo.getText()
+            });
+            iniciar();
+        }
+    }
+    public void seleccionarFila(){
+        //Utilizamos este método para obtener que fila se ha seleccionado.
+        //Habilitamos botones y campos.
+        //Rellenamos campos.
+        if(jTable1.getRowCount() > 0 || agregar.isEnabled()== false){
+            //Utilizamos getValueAt del model para obtener datos de la tabla.
+            fila = jTable1.getSelectedRow();
+            id.setText(String.valueOf(model.getValueAt(fila, 0)));
+            nom.setText(String.valueOf(model.getValueAt(fila, 1)));
+            dir.setText(String.valueOf(model.getValueAt(fila, 2)));
+            correo.setText(String.valueOf(model.getValueAt(fila, 3)));
+            nuevo.setEnabled(false);
+            editar.setEnabled(true);
+            eliminar.setEnabled(true);            
+        }
+    }
+    public void editar(){
+        //Al precionar el botón editar se activan algunos campos
+        // y otros se desactivan. Lo mismo con los botones.
+        jTable1.setEnabled(false);
+        eliminar.setEnabled(false);
+        actualizar.setEnabled(true);
+        nom.setEnabled(true);
+        dir.setEnabled(true);
+        correo.setEnabled(true);
+    }
+    public void actualizar(){
+        if(nom.getText().isEmpty() || dir.getText().isEmpty() || correo.getText().isEmpty() ){
+           JOptionPane.showMessageDialog(null, "Rellena todos los campos."); 
+        }
+        else{
+            //Utilizamos setValueAt para modificar datos en tabla.
+            //Por orden se indica "Datos a cargar", fila y columna.
+            model.setValueAt(nom.getText(), fila, 1);
+            model.setValueAt(dir.getText(), fila, 2);
+            model.setValueAt(correo.getText(), fila, 3);
+            iniciar();            
+        }
+    }
+    public void eliminar(){
+        //Utilizamos showConfirmDialog para el botón eliminar.
+        int showConfirmDialog = JOptionPane.showConfirmDialog(null, "Desea eliminar esta fila.", "Mensaje del Sistema.", JOptionPane.YES_NO_OPTION);
+        if (showConfirmDialog == 0) {
+            model.removeRow(fila);
+           // reiniciar();
+            iniciar();
+        }
+    }
+    /*public void reiniciar(){
+        //Reordenamos el id para evitar que se dupliquen.
+        for (int i = 0; i < jTable1.getRowCount(); i++) {
+            model.setValueAt(i+1, i, 0);            
+        }
+    }*/
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -455,33 +740,53 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAnyadir;
-    private javax.swing.JButton botonEliminar;
     private javax.swing.JButton botonPedido;
     private javax.swing.JButton botonPlantas;
     private javax.swing.JButton botonRecursos;
     private javax.swing.JButton botonSalir;
     private javax.swing.JButton botonTareas;
+    private javax.swing.JButton btActualizar;
+    private javax.swing.JButton btAnyadir;
+    private javax.swing.JButton btEliminar;
+    private javax.swing.JButton btNuevo;
     private javax.swing.JButton jBAceptar;
     private javax.swing.JButton jBAnadir;
     private javax.swing.JButton jBCancelar;
+    private javax.swing.JComboBox jComboMaceta;
+    private javax.swing.JComboBox jComboRiego;
+    private javax.swing.JTextField jEpoca;
     private javax.swing.JPanel jInicio;
     private javax.swing.JLabel jLAP;
+    private javax.swing.JTextField jNombre;
+    private javax.swing.JTextField jNombreCientifico;
     private javax.swing.JPanel jPPedi;
     private javax.swing.JPanel jPedidos;
     private javax.swing.JPanel jPlantas;
+    private javax.swing.JTextField jPrecio;
     private javax.swing.JPanel jRecursos;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTablePedidos;
     private javax.swing.JPanel jTareas;
+    private javax.swing.JTextArea jTextAreaDescripcion;
     private javax.swing.JTextField jTextFieldAut;
     private javax.swing.JLabel nomEmpresa;
+    private javax.swing.JLabel txtDescripcion;
+    private javax.swing.JLabel txtEpoca;
+    private javax.swing.JLabel txtEuro;
+    private javax.swing.JLabel txtMaceta;
+    private javax.swing.JLabel txtNombre;
+    private javax.swing.JLabel txtNombreCientifico;
     private javax.swing.JLabel txtPedido;
     private javax.swing.JLabel txtPlantas;
+    private javax.swing.JLabel txtPrecio;
     private javax.swing.JLabel txtRecursos;
+    private javax.swing.JLabel txtRiego;
     private javax.swing.JLabel txtTareas;
     // End of variables declaration//GEN-END:variables
+    private DefaultTableModel model=null;
 }
+
