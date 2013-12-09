@@ -47,9 +47,12 @@ public class LogIn extends javax.swing.JDialog {
         botonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 255, 51));
 
         jTitulo.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jTitulo.setText("Acceso a la gestión del vivero");
+
+        jPanel1.setBackground(new java.awt.Color(239, 255, 239));
 
         lblUsuario.setText("Usuario");
 
@@ -69,6 +72,7 @@ public class LogIn extends javax.swing.JDialog {
             }
         });
 
+        BotonEntrar.setBackground(new java.awt.Color(204, 255, 153));
         BotonEntrar.setText("Entrar");
         BotonEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -86,6 +90,7 @@ public class LogIn extends javax.swing.JDialog {
             }
         });
 
+        botonSalir.setBackground(new java.awt.Color(204, 255, 153));
         botonSalir.setText("Salir");
         botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
