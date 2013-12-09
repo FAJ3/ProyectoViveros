@@ -79,14 +79,6 @@
                       <EmptySpace pref="160" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="botonTareas" min="-2" pref="237" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
-                              <Component id="botonSalir" min="-2" pref="132" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
-                              <Component id="botonRecursos" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="botonPedido" min="-2" max="-2" attributes="0"/>
@@ -102,21 +94,29 @@
                               </Group>
                               <EmptySpace min="-2" pref="243" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="nomEmpresa" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="botonTareas" min="-2" pref="237" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                                      <Component id="botonSalir" min="-2" pref="132" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                              <Component id="botonRecursos" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="507" max="-2" attributes="0"/>
-                      <Component id="nomEmpresa" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Component id="nomEmpresa" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="botonTareas" min="-2" pref="248" max="-2" attributes="0"/>
@@ -139,7 +139,7 @@
                           <Component id="txtPedido" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtPlantas" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="78" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -294,7 +294,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="581" max="32767" attributes="0"/>
+                      <EmptySpace pref="648" max="32767" attributes="0"/>
                       <Component id="btHome" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -352,7 +352,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="248" max="32767" attributes="0"/>
+                      <EmptySpace pref="315" max="32767" attributes="0"/>
                       <Component id="jPPedi" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="btHome1" min="-2" max="-2" attributes="0"/>
@@ -624,7 +624,7 @@
                           </Group>
                           <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="143" max="32767" attributes="0"/>
+                      <EmptySpace pref="210" max="32767" attributes="0"/>
                       <Component id="btHome2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -923,7 +923,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="581" max="32767" attributes="0"/>
+                      <EmptySpace pref="648" max="32767" attributes="0"/>
                       <Component id="btHome3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>

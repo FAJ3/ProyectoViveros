@@ -170,13 +170,6 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(160, Short.MAX_VALUE)
                 .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInicioLayout.createSequentialGroup()
-                        .addComponent(botonTareas, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(134, 134, 134)
-                        .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(114, 114, 114)
-                        .addComponent(botonRecursos)
-                        .addGap(147, 147, 147))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInicioLayout.createSequentialGroup()
                         .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInicioLayout.createSequentialGroup()
                                 .addComponent(botonPedido)
@@ -187,18 +180,24 @@ public class Principal extends javax.swing.JFrame {
                                 .addGap(363, 363, 363)
                                 .addComponent(txtPlantas)
                                 .addGap(102, 102, 102)))
-                        .addGap(243, 243, 243))))
-            .addGroup(jInicioLayout.createSequentialGroup()
-                .addGap(507, 507, 507)
-                .addComponent(nomEmpresa)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(243, 243, 243))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInicioLayout.createSequentialGroup()
+                        .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(nomEmpresa)
+                            .addGroup(jInicioLayout.createSequentialGroup()
+                                .addComponent(botonTareas, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(134, 134, 134)
+                                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(114, 114, 114)
+                        .addComponent(botonRecursos)
+                        .addGap(147, 147, 147))))
         );
         jInicioLayout.setVerticalGroup(
             jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInicioLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(21, 21, 21)
                 .addComponent(nomEmpresa)
-                .addGap(5, 5, 5)
+                .addGap(7, 7, 7)
                 .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(botonTareas, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -216,7 +215,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPedido)
                     .addComponent(txtPlantas))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         botonTareas.getAccessibleContext().setAccessibleName("botonTareas");
@@ -245,7 +244,7 @@ public class Principal extends javax.swing.JFrame {
         jTareasLayout.setVerticalGroup(
             jTareasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTareasLayout.createSequentialGroup()
-                .addContainerGap(581, Short.MAX_VALUE)
+                .addContainerGap(648, Short.MAX_VALUE)
                 .addComponent(btHome)
                 .addContainerGap())
         );
@@ -347,7 +346,7 @@ public class Principal extends javax.swing.JFrame {
         jPedidosLayout.setVerticalGroup(
             jPedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPedidosLayout.createSequentialGroup()
-                .addContainerGap(248, Short.MAX_VALUE)
+                .addContainerGap(315, Short.MAX_VALUE)
                 .addComponent(jPPedi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
                 .addComponent(btHome1)
@@ -589,7 +588,7 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(btActualizar)
                             .addComponent(btEditar)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
                 .addComponent(btHome2)
                 .addContainerGap())
         );
@@ -618,7 +617,7 @@ public class Principal extends javax.swing.JFrame {
         jRecursosLayout.setVerticalGroup(
             jRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jRecursosLayout.createSequentialGroup()
-                .addContainerGap(581, Short.MAX_VALUE)
+                .addContainerGap(648, Short.MAX_VALUE)
                 .addComponent(btHome3)
                 .addContainerGap())
         );
@@ -650,8 +649,6 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRecursosMouseClicked
 
     private void botonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalirMouseClicked
-        
-      
     }//GEN-LAST:event_botonSalirMouseClicked
 
     private void botonTareasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTareasActionPerformed
@@ -721,7 +718,7 @@ public class Principal extends javax.swing.JFrame {
 
    
     public void iniciar(){
-        //Vaciamos campus e inhabilitamos botones y desplegables
+        //Vaciamos campos e inhabilitamos botones y desplegables
         this.jNombre.setText(null);
         this.jNombre.setEnabled(false);
         this.jNombreCientifico.setText(null);
@@ -731,7 +728,7 @@ public class Principal extends javax.swing.JFrame {
         this.jTextAreaDescripcion.setText(null);
         this.jTextAreaDescripcion.setEnabled(false);
         this.jPrecio.setEnabled(false);
-        this.jPrecio.setEnabled(false);
+        this.jPrecio.setText(null);
         this.btNuevo.setEnabled(true);
         this.btEliminar.setEnabled(false);
         this.btAnyadir.setEnabled(false);
@@ -771,7 +768,7 @@ public class Principal extends javax.swing.JFrame {
         if(jNombre.getText().isEmpty() || jNombreCientifico.getText().isEmpty() || jEpoca.getText().isEmpty() || jPrecio.getText().isEmpty()){
            JOptionPane.showMessageDialog(null, "Rellena todos los campos."); 
         }
-        else{
+        else {
             //Agregamos datos a la tabla
             model.addRow(new Object[]{
                 jNombre.getText(),jNombreCientifico.getText(),jComboMaceta.getSelectedItem(),jComboRiego.getSelectedItem(),jEpoca.getText(), jTextAreaDescripcion.getText(), jComboBoxTerreno.getSelectedItem(), jPrecio.getText()           });
@@ -833,14 +830,13 @@ public class Principal extends javax.swing.JFrame {
     }
     public void eliminar(){
         //Mostramos un mensaje 
-        int showConfirmDialog = JOptionPane.showConfirmDialog(null, "Desea eliminar esta fila.", "Eliminar fila", JOptionPane.YES_NO_OPTION);
+        int showConfirmDialog = JOptionPane.showConfirmDialog(null, "¿Desea eliminar esta fila?", "Eliminar fila", JOptionPane.YES_NO_CANCEL_OPTION);
         if (showConfirmDialog == 0) {
             model.removeRow(fila);
-           // reiniciar();
             iniciar();
         }
     }
-    
+   
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
