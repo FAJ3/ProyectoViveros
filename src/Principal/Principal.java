@@ -72,6 +72,8 @@ public class Principal extends javax.swing.JFrame {
         btActualizar = new javax.swing.JButton();
         btEditar = new javax.swing.JButton();
         btHome2 = new javax.swing.JButton();
+        txtTerreno = new javax.swing.JLabel();
+        jComboBoxTerreno = new javax.swing.JComboBox();
         jRecursos = new javax.swing.JPanel();
         btHome3 = new javax.swing.JButton();
 
@@ -359,20 +361,20 @@ public class Principal extends javax.swing.JFrame {
         jTable1.setBackground(new java.awt.Color(203, 255, 203));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Nombre científico", "Maceta", "Riego", "Epc. plantación", "Descripción", "Precio"
+                "Nombre", "Nombre científico", "Maceta", "Riego", "Epc. plantación", "Descripción", "Terreno", "Precio"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -401,6 +403,7 @@ public class Principal extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(4).setResizable(false);
             jTable1.getColumnModel().getColumn(5).setResizable(false);
             jTable1.getColumnModel().getColumn(6).setResizable(false);
+            jTable1.getColumnModel().getColumn(7).setResizable(false);
         }
 
         btAnyadir.setBackground(new java.awt.Color(204, 255, 153));
@@ -437,7 +440,7 @@ public class Principal extends javax.swing.JFrame {
 
         txtMaceta.setText("Maceta");
 
-        jComboMaceta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 Litro", "2 Litros", "5 Litros" }));
+        jComboMaceta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1 Litro", "2 Litros", "3 Litros", "4 Litros", "5 Litros" }));
         jComboMaceta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboMacetaActionPerformed(evt);
@@ -480,6 +483,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        txtTerreno.setText("Terreno");
+
+        jComboBoxTerreno.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Interior", "Exterior" }));
+
         javax.swing.GroupLayout jPlantasLayout = new javax.swing.GroupLayout(jPlantas);
         jPlantas.setLayout(jPlantasLayout);
         jPlantasLayout.setHorizontalGroup(
@@ -491,27 +498,31 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPlantasLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNombreCientifico)
-                            .addComponent(txtNombre)
-                            .addComponent(txtMaceta)
-                            .addComponent(txtRiego)
-                            .addComponent(txtEpoca, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDescripcion)
-                            .addComponent(txtPrecio))
-                        .addGap(76, 76, 76)
-                        .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPlantasLayout.createSequentialGroup()
+                                .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNombreCientifico)
+                                    .addComponent(txtNombre)
+                                    .addComponent(txtMaceta)
+                                    .addComponent(txtRiego)
+                                    .addComponent(txtEpoca, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDescripcion)
+                                    .addComponent(txtTerreno))
+                                .addGap(76, 76, 76)
+                                .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jEpoca)
+                                    .addComponent(jComboMaceta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboRiego, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jNombreCientifico)
+                                    .addComponent(jNombre)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                                    .addComponent(jComboBoxTerreno, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPlantasLayout.createSequentialGroup()
+                                .addComponent(txtPrecio)
+                                .addGap(157, 157, 157)
                                 .addComponent(jPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtEuro))
-                            .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jEpoca)
-                                .addComponent(jComboMaceta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboRiego, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jNombreCientifico)
-                                .addComponent(jNombre)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(32, 32, 32))
+                                .addComponent(txtEuro)))
+                        .addGap(35, 35, 35))
                     .addGroup(jPlantasLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(btNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -561,12 +572,16 @@ public class Principal extends javax.swing.JFrame {
                             .addGroup(jPlantasLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBoxTerreno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTerreno))
+                        .addGap(18, 18, 18)
                         .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtEuro)
                             .addComponent(txtPrecio))
-                        .addGap(69, 69, 69)
+                        .addGap(41, 41, 41)
                         .addGroup(jPlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btAnyadir)
                             .addComponent(btNuevo)
@@ -725,6 +740,7 @@ public class Principal extends javax.swing.JFrame {
         this.jComboMaceta.setEnabled(false);
         this.jComboRiego.setEnabled(false);
         this.btEditar.setEnabled(false);
+        this.jComboBoxTerreno.setEnabled(false);
         int fila = 0;
         
     }
@@ -746,6 +762,7 @@ public class Principal extends javax.swing.JFrame {
         this.jComboRiego.setEnabled(true);
         this.jEpoca.setEnabled(true);        
         this.jTextAreaDescripcion.setEnabled(true);
+        this.jComboBoxTerreno.setEnabled(true);
         this.jPrecio.setEnabled(true);
         this.btAnyadir.setEnabled(true);
     }
@@ -757,7 +774,7 @@ public class Principal extends javax.swing.JFrame {
         else{
             //Agregamos datos a la tabla
             model.addRow(new Object[]{
-                jNombre.getText(),jNombreCientifico.getText(),jComboMaceta.getSelectedItem(),jComboRiego.getSelectedItem(),jEpoca.getText(), jTextAreaDescripcion.getText(), jPrecio.getText()           });
+                jNombre.getText(),jNombreCientifico.getText(),jComboMaceta.getSelectedItem(),jComboRiego.getSelectedItem(),jEpoca.getText(), jTextAreaDescripcion.getText(), jComboBoxTerreno.getSelectedItem(), jPrecio.getText()           });
             iniciar();
         }
     }
@@ -774,7 +791,8 @@ public class Principal extends javax.swing.JFrame {
             jComboRiego.setSelectedItem(String.valueOf(model.getValueAt(fila, 3)));
             jEpoca.setText(String.valueOf(model.getValueAt(fila, 4)));
             jTextAreaDescripcion.setText(String.valueOf(model.getValueAt(fila, 5)));
-            jPrecio.setText(String.valueOf(model.getValueAt(fila, 6)));
+            jComboBoxTerreno.setSelectedItem(String.valueOf(model.getValueAt(fila, 6)));
+            jPrecio.setText(String.valueOf(model.getValueAt(fila, 7)));
             btNuevo.setEnabled(false);
             btEditar.setEnabled(true);
             btEliminar.setEnabled(true);
@@ -792,8 +810,9 @@ public class Principal extends javax.swing.JFrame {
         jComboRiego.setEnabled(true);
         jEpoca.setEnabled(true);        
         jTextAreaDescripcion.setEnabled(true);
+        jComboBoxTerreno.setEnabled(true);
         jPrecio.setEnabled(true);
-        btAnyadir.setEnabled(true);
+        btAnyadir.setEnabled(false);
     }
     public void actualizar(){
         if(jNombre.getText().isEmpty() || jNombreCientifico.getText().isEmpty() || jEpoca.getText().isEmpty() || jPrecio.getText().isEmpty()){
@@ -807,7 +826,8 @@ public class Principal extends javax.swing.JFrame {
             model.setValueAt(jComboRiego.getSelectedItem(), fila, 3);
             model.setValueAt(jEpoca.getText(), fila, 4);
             model.setValueAt(jTextAreaDescripcion.getText(), fila, 5);
-            model.setValueAt(jPrecio.getText(), fila, 6);
+            model.setValueAt(jComboBoxTerreno.getSelectedItem(), fila, 6);
+            model.setValueAt(jPrecio.getText(), fila, 7);
             iniciar();            
         }
     }
@@ -848,6 +868,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jBAceptar;
     private javax.swing.JButton jBAnadir;
     private javax.swing.JButton jBCancelar;
+    private javax.swing.JComboBox jComboBoxTerreno;
     private javax.swing.JComboBox jComboMaceta;
     private javax.swing.JComboBox jComboRiego;
     private javax.swing.JTextField jEpoca;
@@ -882,6 +903,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel txtRecursos;
     private javax.swing.JLabel txtRiego;
     private javax.swing.JLabel txtTareas;
+    private javax.swing.JLabel txtTerreno;
     // End of variables declaration//GEN-END:variables
     
 }
